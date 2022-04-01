@@ -1,6 +1,6 @@
 jobs:
 - job: Build
-  displayName: Build Maven Project
+  displayName: Build Maven Project44
   steps:
   - task: Maven@3
     displayName: 'Maven Package'
@@ -16,8 +16,6 @@ jobs:
     artifact: drop
 - deployment: VMDeploy
   displayName: web
-  pool:
-    vmImage: 'Ubuntu-latest'
   environment:
     name: Javaenv
     resourceType: VirtualMachine
