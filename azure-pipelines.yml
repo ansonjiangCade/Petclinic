@@ -19,7 +19,7 @@ jobs:
   pool:
     vmImage: 'Ubuntu-latest'
   environment:
-    name: <environment name>
+    name: JavaEnv
     resourceType: VirtualMachine
   strategy:
       runOnce:
