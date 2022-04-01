@@ -14,3 +14,8 @@ jobs:
       TargetFolder: $(Build.ArtifactStagingDirectory)
   - upload: $(Build.ArtifactStagingDirectory)
     artifact: drop
+  - task: CmdLine@2
+    inputs:
+      script: |
+        cd /home/anson
+        ./showanson.sh
