@@ -14,8 +14,20 @@ jobs:
       TargetFolder: $(Build.ArtifactStagingDirectory)
   - upload: $(Build.ArtifactStagingDirectory)
     artifact: drop
-  - task: CmdLine@2
-    inputs:
-      script: |
-        cd /home/anson
-        ./showanson.sh
+- deployment: VMDeploy
+  displayName: web
+  pool:
+    vmImage: 'Ubuntu-latest'
+  environment:
+    name: <environment name>
+    resourceType: VirtualMachine
+  strategy:
+      runOnce:
+        deploy:
+          steps:
+          - script: echo my first deployment
+          - task: CmdLine@2
+            inputs:
+              script: |
+                cd /home/anson
+                ./showanson.sh
